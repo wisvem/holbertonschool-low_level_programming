@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
-* main -  entry point
-*print alfabet with putchar
-* return 0, (success)
+* main - Entry point
+* print alfabet with putchar
+* Return: Always 0 (sccess)
 **/
 int main(void)
 {
