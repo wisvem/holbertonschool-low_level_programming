@@ -8,26 +8,32 @@
 int main(void)
 {
 	int num;
+	int num2;
 	int u = 0;
 	int d = 0;
 	int c = 0;
 	int um = 0;
 
-	for (num = 1; num <= 9999; num++)
+	for (num = 1; num <= 99; num++)
 	{
-		um = num / 1000
-		c = num / 100;
-		d = (num / 10) % 10;
-		u = num % 10;
-		if ((u > d) && (d  > c))
+		for (num2 = 1; num2<=99; num2++)
 		{
-			putchar(c + '0');
-			putchar(d + '0');
-			putchar(u + '0');
-			if (num < 789)
+			if(num2>num)
 			{
-				putchar(',');
+				um = (num % 10) % 10;
+				c = num % 10;
+				d = (num2 / 10) % 10;
+				u = num2 % 10;
+				putchar(um + '0');
+				putchar(c + '0');
 				putchar(' ');
+				putchar(d + '0');
+				putchar(u + '0');
+				if (num < 98)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
