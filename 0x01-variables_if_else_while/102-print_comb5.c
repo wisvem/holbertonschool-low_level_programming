@@ -18,7 +18,7 @@ int main(void)
 	{
 		for (num2 = 1; num2 <= 99; num2++)
 		{
-			if ((num2 > num) || (num == 0 && j != 0))
+			if ((num2 > num) || (num == 0 && num2 != 0))
 			{
 				um = (num % 10) % 10;
 				c = num % 10;
