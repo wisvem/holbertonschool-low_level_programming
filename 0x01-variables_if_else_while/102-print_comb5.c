@@ -29,7 +29,7 @@ int main(void)
 				putchar(' ');
 				putchar(d + '0');
 				putchar(u + '0');
-				if (num < 99)
+				if (num < 98)
 				{
 					putchar(',');
 					putchar(' ');
