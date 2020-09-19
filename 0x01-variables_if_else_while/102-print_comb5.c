@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * print combination three digits
+ * print combination four digits
  * Return: Always 0 (Success)
 **/
 int main(void)
@@ -14,22 +14,22 @@ int main(void)
 	int c = 0;
 	int um = 0;
 
-	for (num = 1; num <= 99; num++)
+	for (num = 0; num <= 99; num++)
 	{
-		for (num2 = 1; num2 <= 99; num2++)
+		um = num / 10;
+		c = num % 10;
+		for (num2 = 0; num2 <= 99; num2++)
 		{
-			if ((num2 > num) || (num == 0 && num2 != 0))
+			d = num2 / 10;
+			u = num2 % 10;
+			if ((um == d &&  c < u) || (um < d))
 			{
-				um = (num % 10) % 10;
-				c = num % 10;
-				d = (num2 / 10) % 10;
-				u = num2 % 10;
 				putchar(um + '0');
 				putchar(c + '0');
 				putchar(' ');
 				putchar(d + '0');
 				putchar(u + '0');
-				if (num < 98)
+				if (num < 99)
 				{
 					putchar(',');
 					putchar(' ');
