@@ -61,4 +61,15 @@ int print_last_digit(int);
 * jack_bauer - prints every minute of the day of Jack Bauer
 **/
 void jack_bauer(void);
+
+/**
+* void times_table - print the 9 times table
+**/
+void times_table(void);
+
+/**
+* print_to_98 - print
+* @n: number
+**/
+void print_to_98(int n);
 #endif /* _HOLBERTON_H_ */
