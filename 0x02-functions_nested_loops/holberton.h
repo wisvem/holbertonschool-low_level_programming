@@ -80,4 +80,10 @@ void print_to_98(int n);
 * Return: the addition
 **/
 int add(int, int);
+
+/**
+* print_times_table - print n time tables
+* @n: times to be printed
+**/
+void print_times_table(int n);
 #endif /* _HOLBERTON_H_ */
