@@ -56,4 +56,9 @@ int _abs(int);
  * Return: the last digit
 **/
 int print_last_digit(int);
+
+/**
+* jack_bauer - prints every minute of the day of Jack Bauer
+**/
+void jack_bauer(void);
 #endif /* _HOLBERTON_H_ */
