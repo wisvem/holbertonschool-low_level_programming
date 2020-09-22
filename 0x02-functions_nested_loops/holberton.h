@@ -79,5 +79,5 @@ void print_to_98(int n);
 * @int: integer 2
 * Return: the addition
 **/
-int add(int, int)
+int add(int, int);
 #endif /* _HOLBERTON_H_ */

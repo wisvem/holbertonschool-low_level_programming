@@ -2,14 +2,11 @@
 
 /**
 * add - adds two numbers
-* @n1: number 1
-* @n2: number 2
+* @n1: first integer
+* @n2: second integer
 * Return: the addition
 **/
 int add(int n1, int n2)
 {
-	int r;
-
-	r = n1 + n2;
-	return (r);
+	return (n1 + n2);
 }
