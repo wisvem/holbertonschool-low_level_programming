@@ -72,4 +72,12 @@ void times_table(void);
 * @n: number
 **/
 void print_to_98(int n);
+
+/**
+* add - adds two numbers
+* @n1: number 1
+* @n2: number 2
+* Return: the addition
+**/
+int add(int n1, int n2)
 #endif /* _HOLBERTON_H_ */
