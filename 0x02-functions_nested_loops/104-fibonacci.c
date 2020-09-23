@@ -1,25 +1,25 @@
 #include <stdio.h>
-
+#include "holberton.h"
 /**
 * main - fibonacci
 * Return: 0 success
 **/
 int main(void)
 {
-	long a = 1;
-	long b = 2;
+	double a = 1;
+	double b = 2;
 	int i;
-	long c;
+	double c;
 
 	for (i = 1; i <= 98; ++i)
 	{
 		if (i == 98)
 		{
-			printf("%ld\n", a);
+			printf("%f\n", a);
 		}
 		else
 		{
-			printf("%ld, ", a);
+			printf("%f, ", a);
 		}
 		c = a + b;
 		a = b;
