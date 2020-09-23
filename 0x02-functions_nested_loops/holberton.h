@@ -86,4 +86,10 @@ int add(int, int);
 * @n: times to be printed
 **/
 void print_times_table(int n);
+
+/**
+* print_times_table - print times table n times
+* @n: number of times
+**/
+void print_times_table(int n);
 #endif /* _HOLBERTON_H_ */
