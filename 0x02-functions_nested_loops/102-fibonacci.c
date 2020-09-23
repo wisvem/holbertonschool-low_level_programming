@@ -2,6 +2,7 @@
 
 /**
 * main - fibonacci
+* Return: 0 success
 **/
 int main(void)
 {
@@ -24,4 +25,5 @@ int main(void)
 		a = b;
 		b = c;
 	}
+	return (0);
 }
