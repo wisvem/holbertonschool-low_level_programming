@@ -19,9 +19,13 @@ void print_times_table(int n)
 				n3 = (n1 / 10) % 10;
 				n4 = n1 / 100;
 				if (n4 != 0)
-					_putchar('0' + c);
+				{
+					_putchar('0' + n4);
+				}
 				if (n4 != 0 || n3 != 0)
+				{
 					_putchar('0' + n3);
+				}
 				_putchar('0' + n2);
 				if (j != n)
 				{
@@ -35,4 +39,5 @@ void print_times_table(int n)
 			}
 			_putchar('\n');
 		}
+	}
 }
