@@ -14,7 +14,6 @@ int main(void)
 		if ((i % 5 == 0) || (i % 3 == 0))
 			j = i + j;
 	}
-	putchar('\n');
-	printf("%i", j);
+	printf("%d\n", j);
 	return (0);
 }
