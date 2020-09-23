@@ -12,12 +12,12 @@ int main(void)
 	unsigned long c;
 
 	printf("%lu, ", a);
-	for (i = 1; i <= 96; ++i)
+	for (i = 1; i <= 97; ++i)
 	{
 		c = a + b;
 		a = b;
 		b = c;
-		if (i == 96)
+		if (i == 97)
 		{
 			printf("%lu\n", a);
 		}
