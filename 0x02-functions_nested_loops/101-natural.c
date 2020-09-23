@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 /**
- *main- main
- *
- *Return: 0 if success
- */
-
+* main- entry point
+* Return: 0 success
+**/
 int main(void)
 {
 	int i;
@@ -16,7 +14,7 @@ int main(void)
 		if ((i % 5 == 0) || (i % 3 == 0))
 			j = i + j;
 	}
-	_putchar('\n');
+	putchar('\n');
 	printf("%i", j);
 	return (0);
 }
