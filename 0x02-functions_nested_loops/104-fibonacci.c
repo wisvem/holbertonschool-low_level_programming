@@ -6,24 +6,25 @@
 **/
 int main(void)
 {
-	double a = 1;
-	double b = 2;
+	unsigned long a = 1;
+	unsigned long b = 2;
 	int i;
-	double c;
+	unsigned long c;
 
-	for (i = 1; i <= 98; ++i)
+	printf("%lu, ", a);
+	for (i = 1; i <= 96; ++i)
 	{
-		if (i == 98)
-		{
-			printf("%f\n", a);
-		}
-		else
-		{
-			printf("%f, ", a);
-		}
 		c = a + b;
 		a = b;
 		b = c;
+		if (i == 96)
+		{
+			printf("%lu\n", a);
+		}
+		else
+		{
+			printf("%lu, ", a);
+		}
 	}
 	return (0);
 }
