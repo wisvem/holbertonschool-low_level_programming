@@ -3,15 +3,14 @@
 /**
 * main - fibonacci
 **/
-int main(void) 
+int main(void)
 {
 	long a = 1;
 	long b = 2;
 	int i;
 	long c;
 
-
-	for (i = 1; i <= 50; ++i) 
+	for (i = 1; i <= 50; ++i)
 	{
 		if (i == 50)
 		{
@@ -25,5 +24,4 @@ int main(void)
 		a = b;
 		b = c;
 	}
-	return 0;
 }
