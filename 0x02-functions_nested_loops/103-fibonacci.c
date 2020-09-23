@@ -21,5 +21,6 @@ int main(void)
 			i = i + a;
 		}
 	}
+	printf("%ld\n", i);
 	return (0);
 }
