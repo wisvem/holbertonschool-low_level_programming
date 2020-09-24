@@ -27,7 +27,7 @@ int main(void)
 	a = a / 10000; /* fibo number 91 without four last digits */
 	a2 = next / 10000; /* */
 	b2 = next % 10000;
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 7; i++)
 	{
 		part2 = (b + b2) % 10000;
 		if ((b + b2) > 9999)
@@ -39,7 +39,7 @@ int main(void)
 		a2 = part1;
 		b2 = part2;
 		printf("%lu%lu", part1, part2);
-		if (i != 5)
+		if (i != 6)
 			printf(", ");
 	}
 	printf("\n");
