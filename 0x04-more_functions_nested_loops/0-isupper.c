@@ -9,7 +9,7 @@ int _isupper(int c)
 {
 	int i = 65;
 
-	while (c != i && i <= 90)
+	while (c != i && i <= 88)
 	{
 		i++;
 	}
