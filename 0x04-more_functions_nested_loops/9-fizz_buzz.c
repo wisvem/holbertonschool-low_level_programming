@@ -2,8 +2,9 @@
 
 /**
 * main - prints the numbers 1 to 100, fiiz by 3, buzz by 5
+* Retunr: 0 success
 **/
-void main(void)
+int main(void)
 {
 	int i;
 
@@ -29,4 +30,5 @@ void main(void)
 			putchar(' ');
 	}
 	putchar('\n');
+	return (0);
 }
