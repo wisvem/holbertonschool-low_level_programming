@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include "holberton.h"
 /**
-* main - prints the numbers from 1 to 100, fiiz mult 3, buzz mult 5
+* main - prints the numbers 1 to 100, fiiz by 3, buzz by 5
 **/
 void main(void)
 {
