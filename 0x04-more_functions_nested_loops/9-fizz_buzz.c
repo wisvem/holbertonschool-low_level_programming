@@ -2,7 +2,7 @@
 
 /**
 * main - prints the numbers 1 to 100, fiiz by 3, buzz by 5
-* Retunr: 0 success
+* Return: 0 success
 **/
 int main(void)
 {
