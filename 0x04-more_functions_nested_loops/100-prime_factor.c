@@ -2,8 +2,9 @@
 
 /**
 * main - largest prime factor
+* Return: 0 success
 **/
-void main(void)
+int main(void)
 {
 	long n = 612852475143;
 	long pf;
@@ -23,4 +24,5 @@ void main(void)
 
 	}
 	printf("%ld\n", pf);
+	return (0);
 }
