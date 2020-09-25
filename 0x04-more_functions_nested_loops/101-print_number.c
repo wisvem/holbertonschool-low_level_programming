@@ -6,14 +6,12 @@
 **/
 void print_number(int n)
 {
-	int i;
-	int res;
-
-	for (i = 1; i <= n;)
+	if (n < 0)
 	{
-		res = n % 10;
-		_putchar('0' + res);
-		n = n / 10;
-
+		putchar('-');
+		n = -n;
 	}
+	if (n / 10)
+		print_number(n / 10);
+	putchar(n % 10 + '0');
 }
