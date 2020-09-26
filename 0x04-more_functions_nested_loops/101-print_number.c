@@ -27,7 +27,7 @@ void print_number(int n)
 			_putchar('-');
 			bck = n;
 		}
-		while (n > 10)
+		while (n >= 10)
 		{
 			n = n / 10;
 			i++;
@@ -44,5 +44,4 @@ void print_number(int n)
 			_putchar('0' + n);
 		}
 	}
-	_putchar('\n');
 }
