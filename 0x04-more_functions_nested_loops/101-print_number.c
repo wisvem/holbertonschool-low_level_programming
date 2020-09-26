@@ -7,7 +7,8 @@
 void print_number(int n)
 {
 	int i = 1, j, divi = 1;
-	int bck = n;
+	int unsigned bck = n;
+	int unsigned m = n;
 
 	if (n >= 0 && n <= 9)
 	{
@@ -26,10 +27,11 @@ void print_number(int n)
 			n = -n;
 			_putchar('-');
 			bck = n;
+			m = n;
 		}
-		while (n >= 10)
+		while (m >= 10)
 		{
-			n = n / 10;
+			m = m / 10;
 			i++;
 		}
 		for (j = i; j > 1; j--)
@@ -38,10 +40,10 @@ void print_number(int n)
 		}
 		for (j = 1; j <= i; j++)
 		{
-			n = bck / divi;
-			bck = bck - (n * divi);
+			m = bck / divi;
+			bck = bck - (m * divi);
 			divi = divi / 10;
-			_putchar('0' + n);
+			_putchar('0' + m);
 		}
 	}
 }
