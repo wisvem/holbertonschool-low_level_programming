@@ -6,9 +6,9 @@
 **/
 void print_number(int n)
 {
+	unsigned int m = n;
+	unsigned int bck = n;
 	int i = 1, j, divi = 1;
-	int unsigned bck = n;
-	int unsigned m = n;
 
 	if (n >= 0 && n <= 9)
 	{
