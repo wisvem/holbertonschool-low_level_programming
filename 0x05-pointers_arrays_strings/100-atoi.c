@@ -16,17 +16,13 @@ int _atoi(char *s)
 	{
 		if (str[i] >= 48 && str[i] <= 57)
 		{
-			printf("Si %c\n", str[i]);
-			*(aux + j) = str[i];
-			j++;
+			printf("%c", str[i]);
 		}
 		else
 		{
-			printf("No %c\n", str[i]);
 		}
 		i++;
 	}
-	printf("%d\n", i);
 	return (0);
 
 }
