@@ -14,6 +14,10 @@ int _atoi(char *s)
 	{
 		lenght++;
 	}
+	if (lenght == 0)
+	{
+		return (0);
+	}
 	for (i = 0; i < lenght; i++)
 	{
 		if (s[i] == '-')
