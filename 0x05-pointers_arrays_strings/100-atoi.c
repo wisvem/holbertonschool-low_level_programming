@@ -11,13 +11,9 @@ int _atoi(char *s)
 	unsigned int i = 0, lenght = 0, init, finish, num = 1, d, sign = 0, sum = 0;
 
 	while (s[lenght] != '\0')
-	{
 		lenght++;
-	}
 	if (lenght == 0)
-	{
 		return (0);
-	}
 	for (i = 0; i < lenght; i++)
 	{
 		if (s[i] == '-')
