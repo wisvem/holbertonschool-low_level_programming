@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-#include <math.h>
 
 /**
 * _atoi - string to int
@@ -9,7 +8,7 @@
 **/
 int _atoi(char *s)
 {
-	unsigned int i = 0, lenght = 0, init, finish, num, d, sign, sum = 0;
+	unsigned int i = 0, lenght = 0, init, finish, num = 1, d, sign = 0, sum = 0;
 
 	while (s[lenght] != '\0')
 	{
@@ -34,17 +33,23 @@ int _atoi(char *s)
 			break;
 		}
 	}
-	printf("%c\n", sign);
+/*	printf("%c\n", sign); */
 	finish = i - 1;
-	for (init; init <= finish; init++)
+	for (; init <= finish; init++)
 	{
-		d = str[init] - '0';
-		num = pow(10, finish - init) * d;
+		d = s[init] - '0';
+		num = 1;
+		for (i = 0; i < finish - init ; i++)
+		{
+			num = num * 10;
+		}
+		num = num * d;
 		sum = num + sum;
 	}
+	num = 1;
 	if (sign % 2 == 1)
 	{
-		sum = -sum;
+		sum = sum * -1;
 	}
 	return (sum);
 }
