@@ -1,4 +1,6 @@
+#include "holberton.h"
 #include <stdio.h>
+#include <math.h>
 
 /**
 * _atoi - string to int
@@ -44,6 +46,5 @@ int _atoi(char *s)
 	{
 		sum = -sum;
 	}
-	printf("%d", sum);
-	return (0);
+	return (sum);
 }
