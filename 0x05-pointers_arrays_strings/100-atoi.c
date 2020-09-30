@@ -17,9 +17,7 @@ int _atoi(char *s)
 	for (i = 0; i < lenght; i++)
 	{
 		if (s[i] == '-')
-		{
 			sign++;
-		}
 		if (s[i] >= 48 && s[i] <= 57)
 		{
 			init = i;
@@ -33,7 +31,6 @@ int _atoi(char *s)
 			break;
 		}
 	}
-/*	printf("%c\n", sign); */
 	finish = i - 1;
 	for (; init <= finish; init++)
 	{
@@ -46,7 +43,6 @@ int _atoi(char *s)
 		num = num * d;
 		sum = num + sum;
 	}
-	num = 1;
 	if (sign % 2 == 1)
 	{
 		sum = sum * -1;
