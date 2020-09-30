@@ -11,17 +11,17 @@ int _atoi(char *s)
 {
 	unsigned int i = 0, lenght = 0, init, finish, num, d, sign, sum = 0;
 
-	while (str[lenght] != '\0')
+	while (s[lenght] != '\0')
 	{
 		lenght++;
 	}
 	for (i = 0; i < lenght; i++)
 	{
-		if (str[i] == '-')
+		if (s[i] == '-')
 		{
 			sign++;
 		}
-		if (str[i] >= 48 && str[i] <= 57)
+		if (s[i] >= 48 && s[i] <= 57)
 		{
 			init = i;
 			break;
@@ -29,7 +29,7 @@ int _atoi(char *s)
 	}
 	for (; i < lenght; i++)
 	{
-		if (str[i] < 48 || str[i] > 57)
+		if (s[i] < 48 || s[i] > 57)
 		{
 			break;
 		}
