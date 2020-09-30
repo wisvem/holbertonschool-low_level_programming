@@ -7,22 +7,43 @@
 **/
 int _atoi(char *s)
 {
-	char *str;
-	int i = 0, j = 0;
-	char *aux;
+	unsigned int i = 0, lenght = 0, init, finish, num, d, sign, sum = 0;
 
-	aux = str;
-	while (str[i] != '\0')
+	while (str[lenght] != '\0')
 	{
+		lenght++;
+	}
+	for (i = 0; i < lenght; i++)
+	{
+		if (str[i] == '-')
+		{
+			sign++;
+		}
 		if (str[i] >= 48 && str[i] <= 57)
 		{
-			printf("%c", str[i]);
+			init = i;
+			break;
 		}
-		else
-		{
-		}
-		i++;
 	}
+	for (; i < lenght; i++)
+	{
+		if (str[i] < 48 || str[i] > 57)
+		{
+			break;
+		}
+	}
+	printf("%c\n", sign);
+	finish = i - 1;
+	for (init; init <= finish; init++)
+	{
+		d = str[init] - '0';
+		num = pow(10, finish - init) * d;
+		sum = num + sum;
+	}
+	if (sign % 2 == 1)
+	{
+		sum = -sum;
+	}
+	printf("%d", sum);
 	return (0);
-
 }
