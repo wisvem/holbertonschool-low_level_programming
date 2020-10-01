@@ -8,8 +8,7 @@
 **/
 char *_strcat(char *dest, char *src)
 {
-	int sizedest = 0, sizesrc = 0, i;
-	char *fusion;
+	int sizedest = 0, sizesrc = 0;
 
 	while (dest[sizedest] != '\0')
 	{
@@ -17,14 +16,10 @@ char *_strcat(char *dest, char *src)
 	}
 	while (src[sizesrc] != '\0')
 	{
+		dest[sizedest] = src[sizesrc];
 		sizesrc++;
+		sizedest++;
 	}
-	fusion
-	for (i = 0; i < sizesrc; i++)
-	{
-		fusion[i] = src[i];
-	}
-	fusion[i] = '\0';
-
-	return (fusion);
+	dest[sizedest] = '\0';
+	return (dest);
 }
