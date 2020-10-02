@@ -12,4 +12,6 @@
 
 void print_line(char *c, int s, int l)
 {
+	if (size <= 0)
+		return ('\n');
 }
