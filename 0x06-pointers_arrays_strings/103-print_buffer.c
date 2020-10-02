@@ -2,15 +2,12 @@
 #include <stdio.h>
 
 /**
-* print_line - prints a s bytes of a buffer
-* @c: buffer to print
-* @s: bytes of buffer to print
-* @l: line of buffer to print
-*
-* Return: void
+* print_buffer - print
+* @b: buffer
+* @size: size
 **/
 
-void print_line(char *c, int s, int l)
+void print_buffer(char *b, int size)
 {
 	if (size <= 0)
 		return ('\n');
