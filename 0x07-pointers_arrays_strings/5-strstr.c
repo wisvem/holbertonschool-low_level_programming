@@ -19,6 +19,8 @@ char *_strstr(char *haystack, char *needle)
 	{
 		size_n++;
 	}
+	if (size_n > size_h)
+		return (p);
 	for (i = 0; i < size_h; i++)
 	{
 		if (haystack[i] == needle[j])
