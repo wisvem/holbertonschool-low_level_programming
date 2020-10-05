@@ -4,7 +4,7 @@
 * @c: character
 * Return: return a pointer to the first ocur
 **/
-char *_strchr(char *s, char c);
+char *_strchr(char *s, char c)
 {
 	int i = 0, sw = 0;
 	char *p;
