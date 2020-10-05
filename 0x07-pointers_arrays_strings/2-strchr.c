@@ -6,10 +6,11 @@
 **/
 char *_strchr(char *s, char c)
 {
-	int i = 0, sw = 0;
-	char *p = NULL;
+	int i = 0;
+	char *p;
 
-	while (s[i] != '\0' && sw == 0)
+	p = '\0';
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
