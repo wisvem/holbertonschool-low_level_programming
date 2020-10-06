@@ -26,6 +26,13 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		}
 	}
-	p = (s + i);
-	return (p);
+	if (find == 1)
+	{
+		p = (s + i);
+		return (p);
+	}
+	else
+	{
+		return ('\0');
+	}
 }
