@@ -46,11 +46,9 @@ int palin(char *s, int i, int lenght)
 **/
 int is_palindrome(char *s)
 {
-	int es = palin(s, 0, (_strlen_recursion(s) - 1));
-
 	if (_strlen_recursion(s) == 0)
 	{
 		return (1);
 	}
-	return (es);
+	return (palin(s, 0, (_strlen_recursion(s) - 1)));
 }
