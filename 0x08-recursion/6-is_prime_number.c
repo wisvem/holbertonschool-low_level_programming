@@ -25,11 +25,9 @@ int prime(int x, int y)
 **/
 int is_prime_number(int n)
 {
-	int es = prime(n, 2);
-
 	if (n < 2)
 	{
 		return (0);
 	}
-	return (es);
+	return (prime(n, 2));
 }
