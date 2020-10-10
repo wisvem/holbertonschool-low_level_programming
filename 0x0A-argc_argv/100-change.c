@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	if (money <= 0)
 	{
 		printf("Error\n");
-		return (1);
+		return (0);
 	}
 	else
 	{
