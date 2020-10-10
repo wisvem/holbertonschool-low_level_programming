@@ -1,13 +1,13 @@
 #include <stdio.h>
+
 /**
- *main-arg
- *Return:0
- *@argc:count
- *@argv:value
- */
-int main(int argc, char *argv[])
+* main - prints the number of arguments passed into it
+* @argc: arguments count
+* @argv: arguments vector
+* Return: 0 success
+**/
+int main(int argc, __attribute__((unused)) char *argv[])
 {
-	(void)argc;
-	printf("%s\n", argv[0]);
+	printf("%d\n", argc - 1);
 	return (0);
 }
