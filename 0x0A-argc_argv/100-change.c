@@ -10,9 +10,15 @@
 int main(int argc, char *argv[])
 {
 	int coin[] = {1, 2, 5, 10, 25};
-	int change = 0, i = 0, money = atoi(argv[1]), sw = 0;
+	int change = 0, i = 0, money, sw = 0;
 
-	if (argc != 2 || money <= 0)
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	money = atoi(argv[1]);
+	if (money <= 0)
 	{
 		printf("Error\n");
 		return (1);
