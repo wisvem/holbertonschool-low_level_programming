@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	for (i = 0; i <= sizes1 + sizes2; i++)
+	for (i = 0; i < sizes1 + sizes2; i++)
 	{
 		if (i < sizes1)
 		{
@@ -48,5 +48,6 @@ char *str_concat(char *s1, char *s2)
 			j++;
 		}
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }
