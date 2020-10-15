@@ -31,17 +31,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 		sizes2 = 0;
-	ptr = malloc(sizeof(char) * (sizes1 + sizes2 + 1));
+	if (n >= size2)
+		n = size2;
+	ptr = malloc(sizeof(char) * (sizes1 + n + 1));
 	if (ptr == NULL)
-	{
 		return (NULL);
-	}
-	for (i = 0; i < sizes1 + sizes2; i++)
+	for (i = 0; i < sizes1 + n; i++)
 	{
 		if (i < sizes1)
-		{
 			ptr[i] = s1[i];
-		}
 		else
 		{
 			ptr[i] = s2[j];
