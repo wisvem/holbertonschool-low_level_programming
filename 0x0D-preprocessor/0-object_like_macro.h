@@ -1,5 +1,5 @@
-#ifndef 0-OBJECT_LIKE_MACRO_H_
-#define 0-OBJECT_LIKE_MACRO_H_
+#ifndef OBJECT_LIKE_MACRO
+#define OBJECT_LIKE_MACRO
 
 #define SIZE 1024
 #endif
