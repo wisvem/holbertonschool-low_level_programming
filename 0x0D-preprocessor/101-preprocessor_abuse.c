@@ -1,0 +1,3 @@
+#pragma("Hello, Holberton")
+main()
+{}
