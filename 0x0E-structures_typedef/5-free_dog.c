@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
-* free_dog: frees the dog
+* free_dog - frees the dog
 * @d: the dog to be freed
 **/
 void free_dog(dog_t *d)
@@ -14,5 +14,4 @@ void free_dog(dog_t *d)
 	free((*d).name);
 	free((*d).owner);
 	free(d);
-}
 }
