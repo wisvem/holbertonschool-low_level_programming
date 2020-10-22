@@ -7,7 +7,7 @@
 * @argv: arguments vector
 * Return: 1 error, 0 success
 **/
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
