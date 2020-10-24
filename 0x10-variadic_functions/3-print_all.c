@@ -11,42 +11,39 @@
 void print_all(const char * const format, ...)
 {
 	va_list parameters;
-	unsigned int i = 0, j = 0, coma = 0;
+	unsigned int i = 0, coma = 0;
 	char *value;
 
-	while (format != NULL)
+	va_start(parameters, format);
+	while (format != NULL && format[i] != '\0')
 	{
-		va_start(parameters, format);
-		while (j < 4)
+		coma = 0;
+		switch (format[i])
 		{
-			coma = 0;
-			switch (format[j])
-			{
-				case 'c':
-					printf("%c", va_arg(parameters, int));
-					break;
-				case 'i':
-					printf("%i", va_arg(parameters, int));
-					break;
-				case 'f':
-					printf("%f", va_arg(parameters, double));
-					break;
-				case 's':
-					value = va_arg(parameters, char*);
-					if (value != NULL)
-						printf("%s", value);
-					else
-						printf("(nil)");
-					break;
-				default:
-					coma = 1;
-					break;
-			}
-			if (j < i - 1 && coma == 0)
-				printf(", ");
-			j++;
+			case 'c':
+				printf("%c", va_arg(parameters, int));
+				break;
+			case 'i':
+				printf("%i", va_arg(parameters, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(parameters, double));
+				break;
+			case 's':
+				value = va_arg(parameters, char*);
+				if (value != NULL)
+					printf("%s", value);
+				else
+					printf("(nil)");
+				break;
+			default:
+				coma = 1;
+				break;
 		}
-		va_end(parameters);
+		if (coma == 0 && format[i - 1] != '\0')
+			printf(", ");
+		i++;
 	}
+	va_end(parameters);
 	printf("\n");
 }
