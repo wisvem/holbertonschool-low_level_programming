@@ -1,18 +1,13 @@
-global _start
+section .dta
+
+    message db "Hello, Holberton", 10
 
 section .text
 
+global _start
 _start:
-  mov rax, 1
-  mov rdi, 1
-  mov rsi, msg
-  mov rdx, msglen
-  syscall
-
-  mov rax, 60
-  mov rdi, 0
-  syscall
-
-section .rodata
-  msg: db "Hello, Holberton", 10
-  msglen: equ $ - msg
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, message
+    mov rdx, 14
+    syscall
