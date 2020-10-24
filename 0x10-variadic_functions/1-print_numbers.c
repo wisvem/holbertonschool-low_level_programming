@@ -16,7 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		value = va_arg(parameters, int);
 		printf("%i", value);
-		if(separator != NULL && i < n-1)
+		if (separator != NULL && i < n - 1)
 			printf("%s", separator);
 	}
 	va_end(parameters);
