@@ -14,9 +14,9 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0, j = 0, coma = 0;
 	char *value;
 
-	va_start(parameters, format);
 	while (format != NULL && format[i] != '\0')
 		i++;
+	va_start(parameters, format);
 	while (j < i)
 	{
 		coma = 0;
