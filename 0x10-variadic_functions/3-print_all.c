@@ -3,15 +3,11 @@
 /**
 * print_all - prints anything
 * @format: list of types of arguments
-* c: char
-* i: integer
-* f: float
-* s: char *
 **/
 void print_all(const char * const format, ...)
 {
 	va_list parameters;
-	unsigned int i = 0, coma = 0;
+	int i = 0, coma = 0;
 	char *value;
 
 	va_start(parameters, format);
@@ -24,7 +20,7 @@ void print_all(const char * const format, ...)
 				printf("%c", va_arg(parameters, int));
 				break;
 			case 'i':
-				printf("%i", va_arg(parameters, int));
+				printf("%d", va_arg(parameters, int));
 				break;
 			case 'f':
 				printf("%f", va_arg(parameters, double));
@@ -40,7 +36,7 @@ void print_all(const char * const format, ...)
 				coma = 1;
 				break;
 		}
-		if (coma == 0 && format[i - 1] != '\0')
+		if (coma == 0 && format[i + 1] != '\0')
 			printf(", ");
 		i++;
 	}
