@@ -14,10 +14,10 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0, j = 0, coma = 0;
 	char *value;
 
-	while (format != NULL && format[i] != '\0')
+	while (format != NULL)
 		i++;
 	va_start(parameters, format);
-	while (j < i)
+	while (j < 4)
 	{
 		coma = 0;
 		switch (format[j])
