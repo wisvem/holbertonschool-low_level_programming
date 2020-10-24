@@ -34,13 +34,9 @@ void print_all(const char * const format, ...)
 			case 's':
 				value = va_arg(parameters, char*);
 				if (value != NULL)
-				{
 					printf("%s", value);
-				}
 				else
-				{
 					printf("(nil)");
-				}
 				break;
 			default:
 				coma = 1;
