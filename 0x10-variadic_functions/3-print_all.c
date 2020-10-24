@@ -27,10 +27,9 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				value = va_arg(parameters, char*);
-				if (value != NULL)
-					printf("%s", value);
-				else
-					printf("(nil)");
+				if (value == NULL)
+					value = "(nil)";
+				printf("%s", value);
 				break;
 			default:
 				coma = 1;
