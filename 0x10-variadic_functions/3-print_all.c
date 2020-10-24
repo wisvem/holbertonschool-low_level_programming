@@ -15,37 +15,38 @@ void print_all(const char * const format, ...)
 	char *value;
 
 	while (format != NULL)
-		i++;
-	va_start(parameters, format);
-	while (j < 4)
 	{
-		coma = 0;
-		switch (format[j])
+		va_start(parameters, format);
+		while (j < 4)
 		{
-			case 'c':
-				printf("%c", va_arg(parameters, int));
-				break;
-			case 'i':
-				printf("%i", va_arg(parameters, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(parameters, double));
-				break;
-			case 's':
-				value = va_arg(parameters, char*);
-				if (value != NULL)
-					printf("%s", value);
-				else
-					printf("(nil)");
-				break;
-			default:
-				coma = 1;
-				break;
+			coma = 0;
+			switch (format[j])
+			{
+				case 'c':
+					printf("%c", va_arg(parameters, int));
+					break;
+				case 'i':
+					printf("%i", va_arg(parameters, int));
+					break;
+				case 'f':
+					printf("%f", va_arg(parameters, double));
+					break;
+				case 's':
+					value = va_arg(parameters, char*);
+					if (value != NULL)
+						printf("%s", value);
+					else
+						printf("(nil)");
+					break;
+				default:
+					coma = 1;
+					break;
+			}
+			if (j < i - 1 && coma == 0)
+				printf(", ");
+			j++;
 		}
-		if (j < i - 1 && coma == 0)
-			printf(", ");
-		j++;
+		va_end(parameters);
 	}
-	va_end(parameters);
 	printf("\n");
 }
