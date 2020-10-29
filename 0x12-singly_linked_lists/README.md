@@ -1,4 +1,6 @@
-# Holbertonschool-low_level_programming repositorory
-Repository for all the projects related with C language
+# Project 0x12. C - Singly linked lists
+## General
+- When and why using linked lists vs arrays
+- How to build and use linked lists
 ## Contributors
 [@wisvem](https://github.com/wisvem)
