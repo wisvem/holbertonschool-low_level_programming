@@ -8,20 +8,21 @@
 size_t print_list(const list_t *h)
 {
 	int nodes = 0;
+	const list_t *aux = h;
 
-	if (h == NULL)
+	if (aux == NULL)
 		return (0);
-	for (nodes = 0; h != NULL; nodes++)
+	for (nodes = 0; aux != NULL; nodes++)
 	{
-		if ((*h).str == NULL)
+		if ((*aux).str == NULL)
 		{
 			printf("[0] (nil)\n");
 		}
 		else
 		{
-			printf("[%u] %s\n", (*h).len, (*h).str);
+			printf("[%u] %s\n", (*aux).len, (*aux).str);
 		}
-		h = (*h).next;
+		aux = (*aux).next;
 	}
 	return (nodes);
 }
