@@ -2,8 +2,8 @@
 
 /**
 * print_list - prints all the elements of a list
-* @h - head of the list
-* Return - number of nodes
+* @h: head of the list
+* Return: number of nodes
 **/
 size_t print_list(const list_t *h)
 {
@@ -11,7 +11,7 @@ size_t print_list(const list_t *h)
 
 	if (h == NULL)
 		return (0);
-	for(nodes = 0; h != NULL; nodes++)
+	for (nodes = 0; h != NULL; nodes++)
 	{
 		if ((*h).str == NULL)
 		{
