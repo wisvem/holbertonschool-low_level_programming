@@ -8,4 +8,15 @@
 **/
 list_t *add_node_end(list_t **head, const char *str)
 {
+	char *strclone = strdup(str);
+	int i = 0;	
+	list_t *newnode;
+	malloc(sizeof(list_t));
+	(*newnode).str = strdup(str);
+	while (str[i])
+	{
+		i++;
+	}
+	
+	return (*head);
 }
