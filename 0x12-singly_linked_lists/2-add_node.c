@@ -8,15 +8,19 @@
 **/
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *newnode;
+	list_t *newnode = NULL;
 	int i;
 
+	while (str[i] != '\0')/*Get size of str*/
+	{
+		i++;
+	}
 	newnode = malloc(sizeof(list_t));
 	if (newnode == NULL)
+	{
 		return (NULL);
-	while (str[i] != '\0')/*Get size of str*/
-		i++;
-	(*newnode).str = strdup(str);/*Copy str to the node*/
+	}
+	(*newnode).str = strdup(str);
 	(*newnode).len = i;
 	(*newnode).next = *head;
 	*head = newnode;
