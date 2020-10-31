@@ -9,16 +9,16 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *newnode = NULL;
-	int i;
+	int i = 0;
 
-	while (str[i] != '\0')/*Get size of str*/
-	{
-		i++;
-	}
 	newnode = malloc(sizeof(list_t));
 	if (newnode == NULL)
 	{
 		return (NULL);
+	}
+	while (str[i] != '\0')/*Get size of str*/
+	{
+		i++;
 	}
 	(*newnode).str = strdup(str);
 	(*newnode).len = i;
