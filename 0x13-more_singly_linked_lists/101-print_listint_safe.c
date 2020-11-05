@@ -7,7 +7,7 @@
 **/
 size_t print_listint_safe(const listint_t *head)
 {
-	int nodes = 0;
+	int nodes;
 	const listint_t *turtle = head;
 
 	if (head == NULL)
@@ -16,9 +16,8 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	printf("[%p] %i\n", (void *)head, (*head).n);
 	head = (*head).next;
-	while (head != NULL)
+	for (nodes = 0; head != NULL; nodes++)
 	{
-		nodes++;
 		if (head < turtle)
 		{
 			printf("[%p] %i\n", (void *)head, (*head).n);
