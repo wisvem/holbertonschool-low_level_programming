@@ -7,7 +7,7 @@
 **/
 size_t print_listint_safe(const listint_t *head)
 {
-	int nodes;	
+	int nodes;
 	const listint_t *turtle = head;
 
 	if (head == NULL)
@@ -30,5 +30,5 @@ size_t print_listint_safe(const listint_t *head)
 		head = (*head).next;
 		turtle = (*turtle).next;
 	}
-	return (nodes);
+	return (nodes + 1);
 }
