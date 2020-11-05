@@ -16,6 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	printf("[%p] %i\n", (void *)head, (*head).n);
 	head = (*head).next;
+	node++;
 	for (nodes = 0; head != NULL; nodes++)
 	{
 		if (head < turtle)
@@ -30,5 +31,5 @@ size_t print_listint_safe(const listint_t *head)
 		head = (*head).next;
 		turtle = (*turtle).next;
 	}
-	return (nodes + 1);
+	return (nodes);
 }
