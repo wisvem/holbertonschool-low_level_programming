@@ -35,7 +35,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int res = 0, base = 0, pow = 0;
 
 	if (b == NULL)
-		return(res);
+		return (res);
 	while (b[i] != '\0')
 	{
 		if (b[i] == '1' || b[i] == '0')
