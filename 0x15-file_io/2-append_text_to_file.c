@@ -9,7 +9,8 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int file_d = 0, write_r = 0, text_size = 0;
-/*	int file_size = 0;
+/*
+*	int file_size = 0;
 *	char *buff;
 */
 
