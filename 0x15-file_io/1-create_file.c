@@ -27,10 +27,10 @@ int create_file(const char *filename, char *text_content)
 	{
 		while (text_content[text_size] != '\0')
 			text_size++;
-		write_r = write(file_d, text_content, text_size);
+		write_r = write(STDIN_FILENO, text_content, text_size);
 	}
 	if (write_r < 0)
 		return (-1);
-
+	close(file_d);
 	return (1);
 }
