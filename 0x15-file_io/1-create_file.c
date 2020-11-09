@@ -14,7 +14,7 @@
 **/
 int create_file(const char *filename, char *text_content)
 {
-	int file_d = 0, write_r, text_size = 0;
+	int file_d = 0, write_r = 0, text_size = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -27,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		while (text_content[text_size] != '\0')
 			text_size++;
-		write_r = write(STDIN_FILENO, text_content, text_size);
+		write_r = write(1, text_content, text_size);
 	}
 	if (write_r < 0)
 		return (-1);
