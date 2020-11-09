@@ -24,10 +24,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (read_r < 0)
 		return (0);
 
-	write_r = write(1, buff, read_r);
+	write_r = write(STDOUT_FILENO, buff, read_r);
 	if (write_r < 0)
 		return (0);
 
-	close(file_d);
 	return (read_r);
 }
