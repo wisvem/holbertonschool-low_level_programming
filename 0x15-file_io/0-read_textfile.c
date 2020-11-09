@@ -19,15 +19,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file_d = open(filename, O_RDONLY);
 	if (file_d == -1)
 		return (0);
+
 	read_r = read(file_d, buff, letters);
 	if (read_r < 0)
 		return (0);
-	/*
-*	buff[letters] = '\0';
-*/
+
 	write_r = write(1, buff, read_r);
 	if (write_r < 0)
 		return (0);
+
 	close(file_d);
 	return (read_r);
 }
