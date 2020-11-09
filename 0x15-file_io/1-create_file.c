@@ -27,7 +27,6 @@ int create_file(const char *filename, char *text_content)
 	{
 		while (text_content[text_size] != '\0')
 			text_size++;
-		text_content[text_size + 1] = '\0';
 		write_r = write(STDIN_FILENO, text_content, text_size);
 		close(file_d);
 	}
