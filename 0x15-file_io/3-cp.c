@@ -30,7 +30,9 @@ int main(int argc, char *argv[])
 		if (write_r == -1)
 			dprintf(STDERR_FILENO, "Can't write to %s\n", to_name), exit(99);
 		read_r = read(f_source, buff, 1024);
-
+		if (read_r == -1)
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_name),
+				exit(98);
 	}
 	if (close(f_dest) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close %s\n", to_name),
