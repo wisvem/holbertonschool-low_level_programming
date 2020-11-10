@@ -12,16 +12,12 @@ int main(int argc, char *argv[])
 	int f_dest, f_source, read_r, write_r;
 
 	if (argc != 3)
-	{
 		dprintf(STDERR_FILENO, "Usage: cp from_name to_name\n"), exit(97);
-	}
 	from_name = argv[1];
 	to_name =  argv[2];
 	f_dest = open(to_name, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (f_dest == -1)
-	{
 		dprintf(STDERR_FILENO, "Can't 1 write to %s\n", to_name), exit(99);
-	}
 	f_source = open(from_name, O_RDONLY);
 	read_r = read(f_source, buff, 1024);
 	if (f_source == -1 || read_r == -1)
@@ -33,9 +29,7 @@ int main(int argc, char *argv[])
 	{
 		write_r = write(f_dest, buff, read_r);
 		if (write_r == -1)
-		{
 			dprintf(STDERR_FILENO, "Can't 2 write to %s\n", to_name), exit(99);
-		}
 		read_r = write(f_source, buff, 1024);
 /*
 *		printf("Despues %d\n", read_r);
@@ -48,8 +42,10 @@ int main(int argc, char *argv[])
 */
 	}
 	if (close(f_dest) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close %s\n", to_name), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close %s\n", to_name),
+			exit(100);
 	if (close(f_source) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close %s\n", from_name), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close %s\n", from_name),
+			exit(100);
 	return (0);
 }
