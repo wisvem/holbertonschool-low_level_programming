@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
 		read_r = read(f_source, buff, 1024);
 	}
 	if (close(f_dest) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", to_name),
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_dest),
 			exit(100);
 	if (close(f_source) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", from_name),
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", f_source),
 			exit(100);
 	return (0);
 }
