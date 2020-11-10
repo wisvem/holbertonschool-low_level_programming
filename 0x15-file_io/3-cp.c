@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	}
 
 
-	while (read_r != 0)
+	while (read_r > 0)
 	{
 		write_r = write(file_d, buff, read_r);
 		if (write_r == -1)
