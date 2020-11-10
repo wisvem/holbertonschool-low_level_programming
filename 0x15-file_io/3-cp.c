@@ -32,11 +32,6 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Can't write to %s\n", to_name), exit(99);
 		read_r = read(f_source, buff, 1024);
 	}
-	if (close(f_dest) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_dest),
-			exit(100);
-	if (close(f_source) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_source),
-			exit(100);
+
 	return (0);
 }
