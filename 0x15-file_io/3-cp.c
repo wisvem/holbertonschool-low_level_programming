@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	f_dest = open(to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (f_dest == -1)
-		dprintf(STDERR_FILENO, "Can't write to %s\n", to_name), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_name), exit(99);
 	read_r = read(f_source, buff, 1024);
 	if (read_r == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_name),
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	{
 		write_r = write(f_dest, buff, read_r);
 		if (write_r == -1)
-			dprintf(STDERR_FILENO, "Can't write to %s\n", to_name), exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_name), exit(99);
 		read_r = read(f_source, buff, 1024);
 	}
 	if (close(f_source) == -1)
