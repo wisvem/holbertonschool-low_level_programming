@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	int f_dest, f_source, read_r, write_r;
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, "Usage: cp from_name to_name\n"), exit(97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	from_name = argv[1], to_name =  argv[2];
 	f_source = open(from_name, O_RDONLY);
 	if (f_source == -1)
