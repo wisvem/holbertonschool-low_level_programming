@@ -13,8 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp from_name to_name\n"), exit(97);
-	from_name = argv[1];
-	to_name =  argv[2];
+	from_name = argv[1], to_name =  argv[2];
 	f_dest = open(to_name, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (f_dest == -1)
 		dprintf(STDERR_FILENO, "Can't write to %s\n", to_name), exit(99);
@@ -30,16 +29,8 @@ int main(int argc, char *argv[])
 		write_r = write(f_dest, buff, read_r);
 		if (write_r == -1)
 			dprintf(STDERR_FILENO, "Can't write to %s\n", to_name), exit(99);
-		read_r = write(f_source, buff, 1024);
-/*
-*		printf("Despues %d\n", read_r);
-*
-*		if (read_r == -1)
-*		{
-*			dprintf(STDERR_FILENO, "Error: Can't 2 read from file %s\n", from_name),
-*				exit(98);
-*		}
-*/
+		read_r = read(f_source, buff, 1024);
+
 	}
 	if (close(f_dest) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close %s\n", to_name),
