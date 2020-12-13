@@ -15,6 +15,7 @@ int pop_dlistint(dlistint_t **head)
 	{
 		n = (*temp).n;
 		temp2 = (*temp).next;
+		(*temp2).prev = NULL;
 		free(temp);
 		temp = temp2;
 		*head = temp;
@@ -56,6 +57,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		current = (*current).next;
 	}
 	(*prev).next = (*current).next;
+	temp = (*current).next;
+	(*temp).prev = prev;
 	free(current);
 	return (1);
 }
