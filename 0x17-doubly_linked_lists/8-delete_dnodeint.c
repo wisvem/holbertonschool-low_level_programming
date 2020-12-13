@@ -8,19 +8,18 @@
 int pop_dlistint(dlistint_t **head)
 {
 	dlistint_t *temp, *temp2;
-	int n;
 
 	temp = *head;
 	if (temp != NULL)
 	{
-		n = (*temp).n;
 		temp2 = (*temp).next;
-		(*temp2).prev = NULL;
+		if (temp2 != NULL)
+			(*temp2).prev = NULL;
 		free(temp);
 		temp = temp2;
 		*head = temp;
 	}
-	return (n);
+	return (1);
 }
 
 /**
@@ -48,8 +47,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	current = *head;
 	if (index == 0)
 	{
-		pop_dlistint(head);
-		return (1);
+		return (pop_dlistint(head));
 	}
 	for (i = 0; i < index; i++)
 	{
