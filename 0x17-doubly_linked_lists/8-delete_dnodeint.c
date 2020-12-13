@@ -42,6 +42,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		temp = (*temp).next;
 		list_size++;
 	}
+	if (list_size == index)
+		return (-1);
 	if (list_size < index)
 		return (-1);
 	current = *head;
