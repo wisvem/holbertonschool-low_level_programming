@@ -38,6 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		current = (*current).next;
 	}
 	(*prev).next = newnode;
+	(*current).prev = newnode;
 	(*newnode).next = current;
 	(*newnode).prev = prev;
 	return (newnode);
