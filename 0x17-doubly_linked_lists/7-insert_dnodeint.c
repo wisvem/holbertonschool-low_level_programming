@@ -19,27 +19,27 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		temp = (*temp).next;
 		list_size++;
 	}
-	if (list_size <= idx)
+	if (list_size < idx)
 		return (NULL);
 	current = *h;
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode == NULL)
 		return (NULL);
-	(*newnode).n = n;
 	if (idx == 0)
 	{
-		(*newnode).next = *h;
-		*h = newnode;
-		return (newnode);
+		/*Add node to head*/
+		return (add_dnodeint(h, n));
 	}
 	for (i = 0; i < idx; i++)
 	{
 		prev = current;
 		current = (*current).next;
 	}
-	(*prev).next = newnode;
-	(*current).prev = newnode;
+	(*newnode).n = n;
 	(*newnode).next = current;
 	(*newnode).prev = prev;
+	(*prev).next = newnode;
+	(*current).prev = newnode;
+
 	return (newnode);
 }
