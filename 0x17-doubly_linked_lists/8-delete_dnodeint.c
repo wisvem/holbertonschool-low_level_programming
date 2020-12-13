@@ -42,15 +42,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		temp = (*temp).next;
 		list_size++;
 	}
-	if (list_size == index)
+	if (list_size <= index)
 		return (-1);
-	if (list_size < index)
-		return (-1);
-	current = *head;
 	if (index == 0)
 	{
 		return (pop_dlistint(head));
 	}
+	current = *head;
 	for (i = 0; i < index; i++)
 	{
 		prev = current;
@@ -58,7 +56,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	(*prev).next = (*current).next;
 	temp = (*current).next;
-	(*temp).prev = prev;
+	if (temp != NULL)
+		(*temp).prev = prev;
 	free(current);
 	return (1);
 }
