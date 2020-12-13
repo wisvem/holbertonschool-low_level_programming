@@ -48,8 +48,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	current = *head;
 	if (index == 0)
 	{
-		pop_dlistint(head);
-		return (1);
+		return (pop_dlistint(head));
 	}
 	for (i = 0; i < index; i++)
 	{
