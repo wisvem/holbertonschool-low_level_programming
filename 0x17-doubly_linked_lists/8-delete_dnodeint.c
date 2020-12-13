@@ -15,7 +15,8 @@ int pop_dlistint(dlistint_t **head)
 	{
 		n = (*temp).n;
 		temp2 = (*temp).next;
-		(*temp2).prev = NULL;
+		if (temp2 != NULL)
+			(*temp2).prev = NULL;
 		free(temp);
 		temp = temp2;
 		*head = temp;
