@@ -7,14 +7,14 @@
 **/
 size_t dlistint_len(const dlistint_t *h)
 {
-        size_t count = 0;
+	size_t count = 0;
 
-        while (h != NULL)
-        {
-                h = (*h).next;
-                count++;
-        }
-        return (count);
+	while (h != NULL)
+	{
+		h = (*h).next;
+		count++;
+	}
+	return (count);
 }
 /**
 * insert_dnodeint_at_index - inserts a new node at a given position
@@ -28,11 +28,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *auxiliar_node = NULL, *new_node = NULL;
 	unsigned int i = 0, l = 0;
 
-	if (!h)
-		return (NULL);
-	auxiliar_node = *h;
-	if (idx == 0)
-		return (add_dnodeint(h, n));
 	l = dlistint_len(*h);
 	if (l == idx)
 		return (add_dnodeint_end(h, n));
@@ -41,6 +36,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node = malloc(sizeof(dlistint_t));
 	if (!new_node)
 		return (NULL);
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+	auxiliar_node = *h;
 	for (; i < idx - 1; i++)
 		auxiliar_node = (*auxiliar_node).next;
 	(*new_node).n = n;
