@@ -1,22 +1,6 @@
 #include "lists.h"
 
 /**
- * dlistint_len - Entry point
-* @h: head of the list
-* Return: the number of elements in a linked list
-**/
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t count = 0;
-
-	while (h != NULL)
-	{
-		h = (*h).next;
-		count++;
-	}
-	return (count);
-}
-/**
 * insert_dnodeint_at_index - inserts a new node at a given position
 * @h: pointer to head
 * @idx: the given position
@@ -25,27 +9,40 @@ size_t dlistint_len(const dlistint_t *h)
 **/
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *auxiliar_node = NULL, *new_node = NULL;
-	unsigned int i = 0, l = 0;
+	dlistint_t *prev, *current, *newnode, *temp;
+	unsigned int i;
+	unsigned int list_size = 0;
 
-	l = dlistint_len(*h);
-	if (l == idx)
+	temp = *h;
+	while (temp != NULL)
+	{
+		temp = (*temp).next;
+		list_size++;
+	}
+	if (list_size == idx)
+	{
 		return (add_dnodeint_end(h, n));
-	if (l < idx)
+	}
+	if (list_size < idx)
 		return (NULL);
-	new_node = malloc(sizeof(dlistint_t));
-	if (!new_node)
-		return (NULL);
+	current = *h;
 	if (idx == 0)
+	{
+		/*Add node to head*/
 		return (add_dnodeint(h, n));
-	auxiliar_node = *h;
-	for (; i < idx - 1; i++)
-		auxiliar_node = (*auxiliar_node).next;
-	(*new_node).n = n;
-	(*new_node).prev = (*auxiliar_node).prev;
-	(*(*auxiliar_node).prev).next = new_node;
-	(*auxiliar_node).prev = new_node;
-	if ((*auxiliar_node).next)
-		(*new_node).next = auxiliar_node;
-	return (new_node);
+	}
+	for (i = 0; i < idx; i++)
+	{
+		prev = current;
+		current = (*current).next;
+	}
+	newnode = malloc(sizeof(dlistint_t));
+	if (newnode == NULL)
+		return (NULL);
+	(*newnode).n = n;
+	(*newnode).next = current;
+	(*newnode).prev = prev;
+	(*prev).next = newnode;
+	(*current).prev = newnode;
+	return (newnode);
 }
