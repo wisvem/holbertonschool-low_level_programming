@@ -19,7 +19,6 @@ void hash_table_print(const hash_table_t *ht)
 			while (head != NULL)
 			{
 				printf("'%s': '%s'", (*head).key, (*head).value);
-				printf(", ");
 				if ((*head).next != NULL)
 				{
 					printf(", ");
