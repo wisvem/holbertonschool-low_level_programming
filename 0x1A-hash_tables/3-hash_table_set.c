@@ -19,9 +19,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 
 			index = key_index((unsigned char *)key, (*ht).size);
-			newNode = malloc(sizeof(hash_node_t));
-			if (newNode == NULL)
-				return (0);
 			if ((*ht).array[index] != NULL)
 			{
 				head = (*ht).array[index];
@@ -39,6 +36,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			if (sw == 0)
 			{
+				newNode = malloc(sizeof(hash_node_t));
+				if (newNode == NULL)
+					return (0);
 				(*newNode).value = strdup(value);
 				(*newNode).key = strdup(key);
 				(*newNode).next = (*ht).array[index];
