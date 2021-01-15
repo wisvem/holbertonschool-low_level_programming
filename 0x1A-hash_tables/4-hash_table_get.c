@@ -9,13 +9,14 @@
 **/
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int index = hash_djb2((unsigned char *)key) % (*ht).size;
+	unsigned long int index;
 	hash_node_t *head = NULL;
 
 	if (ht != NULL)
 	{
 		if (key != NULL)
 		{
+			index =  hash_djb2((unsigned char *)key) % (*ht).size;
 			if ((*ht).array[index] != NULL)
 			{
 				head = (*ht).array[index];
