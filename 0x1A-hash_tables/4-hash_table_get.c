@@ -12,18 +12,21 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index = hash_djb2((unsigned char *)key) % (*ht).size;
 	hash_node_t *head = NULL;
 
-	if (ht && key)
+	if (ht != NULL)
 	{
-		if ((*ht).array[index])
+		if (key != NULL)
 		{
-			head = (*ht).array[index];
-			while (head != NULL)
+			if ((*ht).array[index] != NULL)
 			{
-				if (strcmp((*head).key, key) == 0)
+				head = (*ht).array[index];
+				while (head != NULL)
 				{
-					return ((*head).value);
+					if (strcmp((*head).key, key) == 0)
+					{
+						return ((*head).value);
+					}
+					head = (*head).next;
 				}
-				head = (*head).next;
 			}
 		}
 	}
