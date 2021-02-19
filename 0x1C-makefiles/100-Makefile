@@ -11,7 +11,7 @@ NAME = holberton
 RM = rm -f
 # Variable for compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
-all: $(OBJ) m.h
+all: m.h $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 clean:
 	$(RM) *~ $(NAME)
