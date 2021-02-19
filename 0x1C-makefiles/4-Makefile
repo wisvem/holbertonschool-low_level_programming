@@ -1,4 +1,4 @@
-# task 2
+# task 4
 # Variable for gcc
 CC = gcc
 # Variable for all .c files
@@ -12,12 +12,10 @@ RM = rm -f *~
 # Variable for compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(OBJ)
-	$(CC) $(CLFGAS) $(OBJ) -o $(NAME)
+        $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 clean:
-	$(RM) $(NAME)
+        $(RM) $(NAME)
 oclean:
-	$(RM) $(OBJ)
-fclean:
-	$(RM) $(NAME) $(OBJ)
-re: oclean
-	$(CC) $(CLFGAS) $(OBJ) -o $(NAME)
+        $(RM) $(OBJ)
+fclean: clean oclean
+re: oclean all
