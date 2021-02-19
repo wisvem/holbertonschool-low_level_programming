@@ -3,7 +3,7 @@
 
 
 def island_perimeter(grid):
-    """Island perimeter function""""
+    """Island perimeter function"""
     count = 0
     hunions = 0
     vunions = 0
