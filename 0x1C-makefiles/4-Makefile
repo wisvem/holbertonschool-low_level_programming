@@ -8,13 +8,13 @@ OBJ = $(SRC:.c=.o)
 # OUTPUT NAME
 NAME = holberton
 # Variable to delete files
-RM = rm -f *~
+RM = rm -f
 # Variable for compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(OBJ)
-        $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 clean:
-	$(RM) $(NAME)
+	$(RM) *~ $(NAME)
 oclean:
 	$(RM) $(OBJ)
 fclean: clean oclean
