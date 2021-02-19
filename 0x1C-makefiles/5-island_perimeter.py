@@ -8,18 +8,21 @@ def island_perimeter(grid):
     hunions = 0
     vunions = 0
 
-    for i in range(len(grid)):
-        for j in range(len(grid)-1):
-            if grid[i][j] is 1:
-                count = count + 1
-                if grid[i][j] is grid[i][j+1]:
+    for row in grid:
+        for n in row:
+            if n is 1:
+                count += 1
+
+        for j in range(1, len(row)):
+            if row[j] is 1:
+                if row[j] is row[j-1]:
                     hunions += 1
 
-    for j in range(len(grid)-1):
-        for i in range(len(grid)):
-            if grid[i][j] is 1:
-                if grid[i][j] is grid[i+1][j]:
-                    vunions += 1
+    for row in grid:
+        for j in range(1, len(row)):
+            if row[j] is 1:
+                if row[j] is row[j-1]:
+                    hunions += 1
 
 #    print(hunions, vunions, count)
     count = count * 4
