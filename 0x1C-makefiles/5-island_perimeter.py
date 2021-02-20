@@ -14,7 +14,6 @@ def island_perimeter(grid):
                 count += 1
         for j in range(1, len(row)):
             if row[j] is 1:
-                print(row[j] is row[j-1])
                 if row[j] is row[j-1]:
                     hunions += 1
 
