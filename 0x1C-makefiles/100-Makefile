@@ -1,6 +1,6 @@
 # task 6
 # Variable for gcc
-CC = gcc -Wall -Werror -Wextra -pedantic
+CC = gcc
 # Variable for all .c files
 SRC = main.c holberton.c
 # Variable for all o files
