@@ -7,9 +7,9 @@ SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 # OUTPUT NAME
 NAME = holberton
-# Variable for compiler flags
+# Variable for compiler flags implicit
 CFLAGS = -Wall -Werror -Wextra -pedantic
-.PHONY: all clean oclean
+.PHONY: all clean oclean fclean
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 clean:
