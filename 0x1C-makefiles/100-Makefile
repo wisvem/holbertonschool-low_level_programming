@@ -1,6 +1,6 @@
 # task 6
 # Variable for gcc
-CC = gcc
+CC = gcc -Wall -Werror -Wextra -pedantic
 # Variable for all .c files
 SRC = main.c holberton.c
 # Variable for all o files
@@ -11,7 +11,7 @@ NAME = holberton
 CFLAGS = -Wall -Werror -Wextra -pedantic
 .PHONY: all clean oclean
 all: m.h $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 clean:
 	$(RM) *~ $(NAME)
 oclean:
