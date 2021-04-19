@@ -1,0 +1,12 @@
+# task 2
+# Variable for gcc
+CC = gcc
+# Variable for all .c files
+SRC = main.c holberton.c
+# Variable for all o files
+OBJ = $(SRC:.c=.o)
+# OUTPUT NAME
+NAME = holberton
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
