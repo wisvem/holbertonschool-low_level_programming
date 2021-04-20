@@ -1,6 +1,23 @@
 #include "search_algos.h"
 
 /**
+* print_array - auxiliary function to print an array
+* @array: pointer to the first element of the array to search in
+* @l: left limit
+* @r: right limit
+**/
+void print_array(int *array, size_t l, size_t r)
+{
+	size_t i;
+
+	printf("Searching in array: ");
+	for (i = l; i < r; i++)
+	{
+		printf("%i, ", array[i]);
+	}
+	printf("%i\n", array[i]);
+}
+/**
 * bs - searches for a value in an array of integers
 * @array: pointer to the first element of the array to search in
 * @l: left limit
@@ -11,17 +28,13 @@
 **/
 int bs(int *array, size_t l, size_t r, int value)
 {
-	size_t mid, i;
+	size_t mid;
 
 	/*printf("l: %lu r: %lu\n", l, r);*/
 	if (r >= l)
 	{
-		printf("Searching in array: ");
-		for (i = l; i < r; i++)
-		{
-			printf("%i, ", array[i]);
-		}
-		printf("%i\n", array[i]);
+
+		print_array(array, l, r);
 		mid = (l + r) / 2;
 		if (array[mid] == value)
 		{
@@ -43,7 +56,7 @@ int bs(int *array, size_t l, size_t r, int value)
 	return (-1);
 }
 /**
-* advance_binary - searches for a value in an array of integers
+* advanced_binary - searches for a value in an array of integers
 * @array: pointer to the first element of the array to search in
 * @size: number of elements in array
 * @value: value to search for
@@ -57,7 +70,10 @@ int advanced_binary(int *array, size_t size, int value)
 	if (array != NULL)
 	{
 		if (array[0] == value)
+		{
+			print_array(array, l, r);
 			return (0);
+		}
 		return (bs(array, l, r, value));
 	}
 	return (-1);
