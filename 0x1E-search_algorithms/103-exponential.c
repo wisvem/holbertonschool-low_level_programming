@@ -13,7 +13,6 @@ int bs(int *array, size_t l, size_t r, int value)
 {
 	size_t m, i;
 
-
 	if (array != NULL)
 	{
 		printf("Value found between indexes [%lu] and [%lu]\n", l, r);
@@ -53,13 +52,17 @@ int exponential_search(int *array, size_t size, int value)
 {
 	size_t i;
 
-	if (array[0] == value || array == NULL)
-		return (-1);
-	i = 1;
-	while (i < size && array[i] <= value)
+	if (array != NULL)
 	{
-		printf("Value checked array[%lu] = [%i]\n", i, array[i]);
-		i = i * 2;
+		if (array[0] == value)
+			return (0);
+		i = 1;
+		while (i < size && array[i] <= value)
+		{
+			printf("Value checked array[%lu] = [%i]\n", i, array[i]);
+			i = i * 2;
+		}
+		return (bs(array, i / 2, (i < size - 1 ? i : size - 1), value));
 	}
-	return (bs(array, i / 2, (i < size - 1 ? i : size - 1), value));
+	return (-1);
 }
