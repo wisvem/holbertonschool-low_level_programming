@@ -5,6 +5,7 @@
 * @array: pointer to the first element of the array to search in
 * @l: left limit
 * @r: right limit
+* @size: number of elements in array
 **/
 void print_array(int *array, size_t l, size_t r, size_t size)
 {
@@ -25,6 +26,7 @@ void print_array(int *array, size_t l, size_t r, size_t size)
 * @l: left limit
 * @r: right limit
 * @value: value to search for
+* @size: number of elements in array
 * Return: the first index where value is located \
 * or -1 if value is not present in array or if array is NULL
 **/
